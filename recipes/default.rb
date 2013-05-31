@@ -1,18 +1,15 @@
-#
-# Cookbook Name:: environment_users-cookbook
-# Recipe:: default
-#
-# Copyright (C) 2013 Intuit, Inc.
-# 
-# Licensed under the Apache License, Version 2.0 (the "License");
-# you may not use this file except in compliance with the License.
-# You may obtain a copy of the License at
-# 
-#    http://www.apache.org/licenses/LICENSE-2.0
-# 
-# Unless required by applicable law or agreed to in writing, software
-# distributed under the License is distributed on an "AS IS" BASIS,
-# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
-# See the License for the specific language governing permissions and
-# limitations under the License.
-#
+include_recipe 'user'
+include_recipe 'user::data_bag'
+
+#node.set['user']['user_array_node_attr'] = "app_env_settings/users"
+node.set['users'] = node['environment_users']['users']
+
+#remove_accounts = node['app_env_settings']['users_to_remove']
+remove_accounts = node['environment_users']['users_to_remove']
+remove_accounts.each do |username|
+  user_account username do
+    action :remove
+    ignore_failure true
+  end
+end
+
