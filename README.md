@@ -12,9 +12,9 @@ Platform:
 Add this cookbook to your runlist
 
 # Attributes
-* ```node['environment_users']['users']``` - list of users to add, for example = ['fred'], ['barney'] - default []
+* ```node['environment_users']['users']``` - list of users to add, for example = ['fred', 'barney'] - default []
 
-* ```node['environment_users']['users_to_remove']``` - list of users to be removed, for example = ['wilma'], ['betty'] - default []
+* ```node['environment_users']['users_to_remove']``` - list of users to be removed, for example = ['wilma', 'betty'] - default []
 
 # Recipes
 ## default
