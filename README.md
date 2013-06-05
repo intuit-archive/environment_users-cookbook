@@ -2,7 +2,7 @@
 
 # Requirements
 * Chef 10.x
-* User profile listed in databags as detailed here: https://github.com/fnichol/chef-user
+* If user profiles are listed in json files in the databag called users, as detailed here: https://github.com/fnichol/chef-user, the user will be created with those properties, otherwise the user will be created with the default values.
 
 Platform:
 * CentOS 6.x
@@ -12,9 +12,9 @@ Platform:
 Add this cookbook to your runlist
 
 # Attributes
-* ```node['environment_users']['users']``` - databag location where your users to add are listed, for example = "app_env_settings/users", defaults to "users"
+* ```node['environment_users']['users']``` - list of users to add, for example = ['fred'], ['barney'] - default []
 
-* ```node['environment_users']['users_to_remove']``` - list of users  to be removed
+* ```node['environment_users']['users_to_remove']``` - list of users to be removed, for example = ['wilma'], ['betty'] - default []
 
 # Recipes
 ## default
