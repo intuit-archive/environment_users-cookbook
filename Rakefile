@@ -1,4 +1,5 @@
 require 'emeril/rake_tasks'
+require 'foodcritic'
 require 'rspec/core/rake_task'
 
 Emeril::RakeTasks.new do |t|
@@ -6,7 +7,8 @@ Emeril::RakeTasks.new do |t|
   t.config[:tag_prefix]           = false
 end
 
-desc 'Run specs'
-RSpec::Core::RakeTask.new do |t|
-  t.rspec_opts = %w(--color)
+FoodCritic::Rake::LintTask.new do |t|
+  t.options = { :fail_tags => ['any'] }
 end
+
+task :default => [:foodcritic]
