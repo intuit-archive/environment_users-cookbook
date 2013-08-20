@@ -1,4 +1,4 @@
-+[![Build Status](https://secure.travis-ci.org/intuit/environment_users-cookbook.png)](http://travis-ci.org/intuit/environment_users-cookbook)
+[![Build Status](https://secure.travis-ci.org/intuit/environment_users-cookbook.png)](http://travis-ci.org/intuit/environment_users-cookbook)
 
 # environment_users-cookbook cookbook
 
