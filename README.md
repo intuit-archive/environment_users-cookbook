@@ -1,5 +1,7 @@
 [![Build Status](https://secure.travis-ci.org/intuit/environment_users-cookbook.png)](http://travis-ci.org/intuit/environment_users-cookbook)
 
+**!!! This project has been deprecated.  We recommend you search the [Chef Supermarket ](https://supermarket.chef.io/) for a supported alternative !!!**
+
 # environment_users-cookbook cookbook
 
 # Requirements
